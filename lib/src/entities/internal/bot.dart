@@ -82,7 +82,10 @@ class Bot with TGAPIMethods {
   /// When this method is called, [id], [name] and [username] are
   /// guaranteed to be not null
   Future onReady(Bot bot) async {}
-
+  
+  /// To push new updates to the bot, from a webhook for example
+  Future pushUpdate(Update update) => _handleUpdate(update);
+  
   /// Override this method when extending this class
   ///
   /// Gets called when token validation through getMe fails
